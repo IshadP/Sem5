@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search cars</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #myInput {
+            font-size: xx-large;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px;
+            border-radius: 999px;
+            background-color: transparent;
+            border: 4px solid black;
+        }
+        .search{
+            display: flex;
+            gap: 20px;
+        }
+
+        #searchBtn{
+            border-radius: 999px;
+
+        }
+        .car{
+            list-style-type: none;
+            font-size: x-large;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="search">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+    <button type="button" id="searchBtn">Search</button>
+
+</div>
+    <ul id="myUL">
+      
+    </ul> 
+    
+</body>
+<script>
+    const cars = [
+    "Toyota Corolla", "Honda Civic", "Ford Mustang", "Chevrolet Camaro", "Nissan Altima",
+    "BMW 3 Series", "Mercedes-Benz C-Class", "Audi A4", "Volkswagen Jetta", "Hyundai Elantra",
+    "Kia Forte", "Subaru Impreza", "Mazda3", "Toyota Camry", "Honda Accord",
+    "Ford Explorer", "Chevrolet Tahoe", "Nissan Pathfinder", "Hyundai Santa Fe", "Kia Sorento",
+    "Toyota RAV4", "Honda CR-V", "Ford Escape", "Chevrolet Equinox", "Subaru Outback",
+    "Mazda CX-5", "Volkswagen Tiguan", "Jeep Grand Cherokee", "Dodge Durango", "GMC Terrain",
+    "Tesla Model 3", "BMW X5", "Mercedes-Benz GLC", "Audi Q5", "Lexus RX",
+    "Porsche Macan", "Jaguar F-Pace", "Land Rover Discovery", "Volvo XC60", "Mitsubishi Outlander",
+    "Chrysler Pacifica", "Toyota Sienna", "Honda Odyssey", "Kia Carnival", "Ford Transit",
+    "Chevrolet Suburban", "Nissan NV3500", "Ram ProMaster City", "Mercedes-Benz Metris", "GMC Savana",
+    "Mini Cooper", "Fiat 500", "Volkswagen Beetle", "Honda Fit", "Nissan Versa",
+    "Toyota Yaris", "Hyundai Accent", "Kia Rio", "Chevrolet Spark", "Ford Fiesta",
+    "Mazda2", "Subaru Crosstrek", "Honda HR-V", "Nissan Kicks", "Hyundai Kona",
+    "Toyota C-HR", "Kia Soul", "Volkswagen ID.4", "Tesla Model Y", "Ford Mustang Mach-E",
+    "Chevrolet Bolt", "Nissan Leaf", "BMW i3", "Audi e-tron", "Porsche Taycan",
+    "Jaguar I-PACE", "Lucid Air", "Rivian R1T", "Polestar 2", "Volvo XC40 Recharge",
+    "Land Rover Range Rover", "Tesla Model X", "Mercedes-Benz EQC", "Hyundai Ioniq 5", "Kia EV6",
+    "Genesis GV80", "Acura MDX", "Infiniti QX60", "Lexus NX", "Mazda MX-5 Miata",
+    "Chevrolet Corvette", "Ford GT", "Porsche 911", "Nissan GT-R", "Dodge Charger",
+    "Chrysler 300", "Buick Regal", "Volkswagen Passat", "Toyota Avalon", "Honda Clarity",
+    "Hyundai Sonata", "Kia Optima", "Subaru Legacy", "Mitsubishi Eclipse Cross", "Nissan Murano",
+    "Chevrolet Malibu", "Ford Taurus", "Volkswagen Arteon", "Buick Envision", "GMC Acadia"
+];
+
+    const list = document.getElementById('myUL');
+
+    for(let i = 0; i < cars.length; i++){
+        const ellist = document.createElement('li');
+        const link = document.createElement('a');
+        link.classList.add('car')
+        link.textContent = cars[i];
+        ellist.append(link);
+        list.append(ellist)
+    }
+
+
+    function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+</html>

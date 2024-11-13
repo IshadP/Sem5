@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0px;
+        }
+        body {
+            background-image: url("unsplash_6NmnrAJPq7M.png");
+            background-size: cover;
+            display: flex;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            filter: saturate(0);
+
+        }
+        .bg {
+            background-color: white;
+            width: 50vw;
+            height: 100vh;
+            padding: 2rem;
+        }
+        .sec1{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .sign-up{
+            font-size: 4rem;
+            text-decoration: underline;
+        }
+        .container-1{
+            padding-left: 12rem;
+            padding-right: 12rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem
+        }
+        .flable{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .textfield-green{
+            display: flex;
+            flex-direction: row;
+            border: 2px solid #72B40E;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+        .textfield-red{
+            display: flex;
+            flex-direction: row;
+            border: 2px solid #F35050;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+        .textfield-black{
+            display: flex;
+            flex-direction: row;
+            border: 2px solid #000000;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+
+        .fentry {
+            font-weight: 800;
+        }
+
+        .verification{
+            padding: 2px;
+            color: #72B40E;
+        }
+        .deny{
+            padding: 2px;
+            color: #F35050;
+        }
+        .neutral{
+            padding: 2px;
+            color: #000000;
+        }
+
+        .email, .password{
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 0.5rem;
+            color: black;
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+
+        .email::selection, .password::selection{
+            width: 100%;
+            height: 100%;
+            border: 0px;
+        }
+
+        .button{
+            display: flex;
+            background-color: yellowgreen;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid yellowgreen;
+            width: 100%;
+            border-radius: 100rem;
+
+        }
+
+        .button:hover{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid yellowgreen;
+            width: 100%;
+            border-radius: 100rem;
+
+        }
+
+    </style>
+    <title>SignUpFOrm</title>
+</head>
+<body>
+    <form class="bg">
+      <div class="sec1">
+        <div class="sign-up">SIGN UP</div>
+        <img src="LGlogo.png" />
+      </div>
+      <div>
+        <div class="container-1">
+            <p class="flable">ENTER YOUR EMAIL </p>
+            <div>
+                <input type="email" class="email"></p>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="30" height="30" fill="url(#pattern0_0_0)"/>
+                    <defs>
+                    <pattern id="pattern0_37_42" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_37_42" transform="scale(0.0111111)"/>
+                    </pattern>
+                    <image id="image0_37_42" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPElEQVR4nO2dW2tcVRTHN7TeUPTRWgUV9Qt4eVKJiNFImfP/n4GjYJV6zYuFaIukvvnm5akE/Bq22oeKfgBFIjX2xRfFB2usJp3M3jPaQOKRdWYItcmkk87aZ58zs/+wYEhm9uz9Y82+rr2OMVFRUVFRUVFRUVFRUVHDKc+yfd00fcwCbzjgEwectuSPDvjZkZcssC4mr+Vv/f+dduTH8plukjwqZQz5dZOlbpre44B3HHDGkW1H5iMZsObILxw51z106G4zycqz7JYO8Iolv7bA5shwB5gFNizwlSNfzo8cudlMii5m2W3iaZa84AvuLp7+pwM+uJRld5hxVT47e0ObfM8Bq6UD3g581QHHpU5mnGSBJy1wPjjg7faTS5JnTN0lfaIjP7XkvxWAuqNJ3Sy5kM/M3GTqqBZwnyO/DQ3SDQsc+H6t0XjQ1Enyc1SZprFkk2lhmj5t6iCbJKkF/gkOjdft2esOeNFUWZac9TknduXB3rTkW6aKsgBlcRAaklOE7cgXTJUk/ZolL4eG4/Rhr3fIZ00V1G42H6rlwMchDVhbIx8IClnmnjItCg6Dnj2bXAw6z5bFSGgIrjzYC+GW1RVe8Tk/K8ipUiHnU1P7LbkUuvGubNjA+VI3oopduAo03IWwJHm3vP1kYCV4gxnIgBVh4B20BeaDN5bBYR/3fvxkyT80Kmt7h6zznSw7ICavNRc9Uta28nuHuhp1/93rsZic8amBAOa3lU8+rwFbypCyri7fkifUvDpND3sDLQepWhXtZNmBnb6jAzw3yu6feG0baOxUtms07lR0lLNeIMuxveamUWcA6FFg7wa5aEOSHFQEvekllKGIu9D62bH4eZ/Y7fv22o0M6i6ulCXf12yDI4/6AH1GGfTla4EZFrZmWXu0U6qQJcTKkS3lSubX+qkP041olDGCtVTDzyQWzkMl81G9MaAnb1mXfEQNtAXe9FVRd51eGdiTt6ydJK+pgS6iOj1W1u0RXFUgFwZ8qAea/Nx7hTl8VxC6u/A2IJa5JWqHgF0hyFLfc3qggV/LqrgbshsJ2l38335RAx0iAtTuEXYgyGJ/qYHW2vVynmAHhFx0dRE0awY6dh0sreuIgyFLGAzj9I7lTO/69/hK6e869VuwfKYJOi7BWcISvLjF6tOTUeNNJeBVNdBxm5QDQXfS9GE10HHjn+Vs/Iv6d6tLH/hstY+y9AbCK0DPKffL8wEOZ/XiOsTS9G110HJUX/dwA6cb17GxWxtGUj9LQG0DaLq6cR1+AmhEkorBZ1xHx39ImF5cB/CS3yBHYFnJI9YFdidN7xKT1+pBjleXrxXkSF7wnvtjooPQuWXHjG8tT0/fKluDFWhsPtaB6CIJxA7eYAazOVPqZSHghwo0Oh/ry0IiSz4Rr7+VJLnkOEHefNIEvaJMLk4A5O/yLLvRhJRcSO8n9MvH1FqtRuN+UwU54Kk6Z51xgz153aXptKmSLImxS4ySppmpoiQ9zpik+tmQmHBTZfVT/tS2G7G9/ZZqpfjZLfVPTQfIlow3pk76u9m81wHf1MiTF4On9Blxnr1Q5RVkkfAEOBl8nqy4XF+qIOQl22w+bsZJ+dTUfkkqUpEtVqnDnNTJjKuWe/vZkqj7t9I9GLgoibpXZmZuN5OiXFIep+lhS37pc6HTnxOflTO+iUo9v5PkTE8usMtVsuJpFKMDljJOSdyFt5CAuivPsn0Sz9YmX3fkRxINJDHIxeNBgNWtx4P00sfL40HOyXvkvXKLVT4bHw8SFRUVFRUVFRUVFRVlhtd/LgTVtMknTIwAAAAASUVORK5CYII="/>
+                    </defs>
+                    </svg>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div class="container-1">
+                <t class="flable">ENTER YOUR PASSWORD</p>
+                <div>
+                <div>
+                    <input type="password" class="password"></p>
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="30" height="30" fill="url(#pattern0_0_0)"/>
+                        <defs>
+                        <pattern id="pattern0_37_42" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_37_42" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_37_42" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPElEQVR4nO2dW2tcVRTHN7TeUPTRWgUV9Qt4eVKJiNFImfP/n4GjYJV6zYuFaIukvvnm5akE/Bq22oeKfgBFIjX2xRfFB2usJp3M3jPaQOKRdWYItcmkk87aZ58zs/+wYEhm9uz9Y82+rr2OMVFRUVFRUVFRUVFRUVHDKc+yfd00fcwCbzjgEwectuSPDvjZkZcssC4mr+Vv/f+dduTH8plukjwqZQz5dZOlbpre44B3HHDGkW1H5iMZsObILxw51z106G4zycqz7JYO8Iolv7bA5shwB5gFNizwlSNfzo8cudlMii5m2W3iaZa84AvuLp7+pwM+uJRld5hxVT47e0ObfM8Bq6UD3g581QHHpU5mnGSBJy1wPjjg7faTS5JnTN0lfaIjP7XkvxWAuqNJ3Sy5kM/M3GTqqBZwnyO/DQ3SDQsc+H6t0XjQ1Enyc1SZprFkk2lhmj5t6iCbJKkF/gkOjdft2esOeNFUWZac9TknduXB3rTkW6aKsgBlcRAaklOE7cgXTJUk/ZolL4eG4/Rhr3fIZ00V1G42H6rlwMchDVhbIx8IClnmnjItCg6Dnj2bXAw6z5bFSGgIrjzYC+GW1RVe8Tk/K8ipUiHnU1P7LbkUuvGubNjA+VI3oopduAo03IWwJHm3vP1kYCV4gxnIgBVh4B20BeaDN5bBYR/3fvxkyT80Kmt7h6zznSw7ICavNRc9Uta28nuHuhp1/93rsZic8amBAOa3lU8+rwFbypCyri7fkifUvDpND3sDLQepWhXtZNmBnb6jAzw3yu6feG0baOxUtms07lR0lLNeIMuxveamUWcA6FFg7wa5aEOSHFQEvekllKGIu9D62bH4eZ/Y7fv22o0M6i6ulCXf12yDI4/6AH1GGfTla4EZFrZmWXu0U6qQJcTKkS3lSubX+qkP041olDGCtVTDzyQWzkMl81G9MaAnb1mXfEQNtAXe9FVRd51eGdiTt6ydJK+pgS6iOj1W1u0RXFUgFwZ8qAea/Nx7hTl8VxC6u/A2IJa5JWqHgF0hyFLfc3qggV/LqrgbshsJ2l38335RAx0iAtTuEXYgyGJ/qYHW2vVynmAHhFx0dRE0awY6dh0sreuIgyFLGAzj9I7lTO/69/hK6e869VuwfKYJOi7BWcISvLjF6tOTUeNNJeBVNdBxm5QDQXfS9GE10HHjn+Vs/Iv6d6tLH/hstY+y9AbCK0DPKffL8wEOZ/XiOsTS9G110HJUX/dwA6cb17GxWxtGUj9LQG0DaLq6cR1+AmhEkorBZ1xHx39ImF5cB/CS3yBHYFnJI9YFdidN7xKT1+pBjleXrxXkSF7wnvtjooPQuWXHjG8tT0/fKluDFWhsPtaB6CIJxA7eYAazOVPqZSHghwo0Oh/ry0IiSz4Rr7+VJLnkOEHefNIEvaJMLk4A5O/yLLvRhJRcSO8n9MvH1FqtRuN+UwU54Kk6Z51xgz153aXptKmSLImxS4ySppmpoiQ9zpik+tmQmHBTZfVT/tS2G7G9/ZZqpfjZLfVPTQfIlow3pk76u9m81wHf1MiTF4On9Blxnr1Q5RVkkfAEOBl8nqy4XF+qIOQl22w+bsZJ+dTUfkkqUpEtVqnDnNTJjKuWe/vZkqj7t9I9GLgoibpXZmZuN5OiXFIep+lhS37pc6HTnxOflTO+iUo9v5PkTE8usMtVsuJpFKMDljJOSdyFt5CAuivPsn0Sz9YmX3fkRxINJDHIxeNBgNWtx4P00sfL40HOyXvkvXKLVT4bHw8SFRUVFRUVFRUVFRVlhtd/LgTVtMknTIwAAAAASUVORK5CYII="/>
+                        </defs>
+                        </svg>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div class="container-1">
+                <p class="flable">RE-ENTER YOUR PASSWORD</p>
+                <div>
+                <div>
+                    <input type="password" class="password"></p>
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="30" height="30" fill="url(#pattern0_0_0)"/>
+                            <defs>
+                            <pattern id="pattern0_37_42" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_37_42" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_37_42" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPElEQVR4nO2dW2tcVRTHN7TeUPTRWgUV9Qt4eVKJiNFImfP/n4GjYJV6zYuFaIukvvnm5akE/Bq22oeKfgBFIjX2xRfFB2usJp3M3jPaQOKRdWYItcmkk87aZ58zs/+wYEhm9uz9Y82+rr2OMVFRUVFRUVFRUVFRUVHDKc+yfd00fcwCbzjgEwectuSPDvjZkZcssC4mr+Vv/f+dduTH8plukjwqZQz5dZOlbpre44B3HHDGkW1H5iMZsObILxw51z106G4zycqz7JYO8Iolv7bA5shwB5gFNizwlSNfzo8cudlMii5m2W3iaZa84AvuLp7+pwM+uJRld5hxVT47e0ObfM8Bq6UD3g581QHHpU5mnGSBJy1wPjjg7faTS5JnTN0lfaIjP7XkvxWAuqNJ3Sy5kM/M3GTqqBZwnyO/DQ3SDQsc+H6t0XjQ1Enyc1SZprFkk2lhmj5t6iCbJKkF/gkOjdft2esOeNFUWZac9TknduXB3rTkW6aKsgBlcRAaklOE7cgXTJUk/ZolL4eG4/Rhr3fIZ00V1G42H6rlwMchDVhbIx8IClnmnjItCg6Dnj2bXAw6z5bFSGgIrjzYC+GW1RVe8Tk/K8ipUiHnU1P7LbkUuvGubNjA+VI3oopduAo03IWwJHm3vP1kYCV4gxnIgBVh4B20BeaDN5bBYR/3fvxkyT80Kmt7h6zznSw7ICavNRc9Uta28nuHuhp1/93rsZic8amBAOa3lU8+rwFbypCyri7fkifUvDpND3sDLQepWhXtZNmBnb6jAzw3yu6feG0baOxUtms07lR0lLNeIMuxveamUWcA6FFg7wa5aEOSHFQEvekllKGIu9D62bH4eZ/Y7fv22o0M6i6ulCXf12yDI4/6AH1GGfTla4EZFrZmWXu0U6qQJcTKkS3lSubX+qkP041olDGCtVTDzyQWzkMl81G9MaAnb1mXfEQNtAXe9FVRd51eGdiTt6ydJK+pgS6iOj1W1u0RXFUgFwZ8qAea/Nx7hTl8VxC6u/A2IJa5JWqHgF0hyFLfc3qggV/LqrgbshsJ2l38335RAx0iAtTuEXYgyGJ/qYHW2vVynmAHhFx0dRE0awY6dh0sreuIgyFLGAzj9I7lTO/69/hK6e869VuwfKYJOi7BWcISvLjF6tOTUeNNJeBVNdBxm5QDQXfS9GE10HHjn+Vs/Iv6d6tLH/hstY+y9AbCK0DPKffL8wEOZ/XiOsTS9G110HJUX/dwA6cb17GxWxtGUj9LQG0DaLq6cR1+AmhEkorBZ1xHx39ImF5cB/CS3yBHYFnJI9YFdidN7xKT1+pBjleXrxXkSF7wnvtjooPQuWXHjG8tT0/fKluDFWhsPtaB6CIJxA7eYAazOVPqZSHghwo0Oh/ry0IiSz4Rr7+VJLnkOEHefNIEvaJMLk4A5O/yLLvRhJRcSO8n9MvH1FqtRuN+UwU54Kk6Z51xgz153aXptKmSLImxS4ySppmpoiQ9zpik+tmQmHBTZfVT/tS2G7G9/ZZqpfjZLfVPTQfIlow3pk76u9m81wHf1MiTF4On9Blxnr1Q5RVkkfAEOBl8nqy4XF+qIOQl22w+bsZJ+dTUfkkqUpEtVqnDnNTJjKuWe/vZkqj7t9I9GLgoibpXZmZuN5OiXFIep+lhS37pc6HTnxOflTO+iUo9v5PkTE8usMtVsuJpFKMDljJOSdyFt5CAuivPsn0Sz9YmX3fkRxINJDHIxeNBgNWtx4P00sfL40HOyXvkvXKLVT4bHw8SFRUVFRUVFRUVFRVlhtd/LgTVtMknTIwAAAAASUVORK5CYII="/>
+                            </defs>
+                            </svg>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container-1">
+            <button class="button" type="submit" >
+                <p class="flable">Create Account</p>
+                <img src="circular_arrow_right.svg" />
+            </button>
+        </div>
+      </div>
+      <div></div>
+      <div></div>
+    </form>
+    
+</body>
+</html>
